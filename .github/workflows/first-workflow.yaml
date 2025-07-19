@@ -8,3 +8,9 @@ jobs:
         steps:
         - name: My first message
           run: echo "Welcome to github actions"
+
+        - name: List the files 
+          run: ls
+
+        - name: Read file
+          run: cat README.md
