@@ -1,6 +1,7 @@
 name: Generating ASCCI Artwork
 
-on: push
+on: 
+  push
 
 jobs:
   ascii_job:
