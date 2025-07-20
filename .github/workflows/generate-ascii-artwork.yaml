@@ -24,3 +24,6 @@ jobs:
 
     - name: List file
       run: ls -ltra
+
+    - name: Only this workflow get executed
+      run: echo "Only this workflow get executed"
