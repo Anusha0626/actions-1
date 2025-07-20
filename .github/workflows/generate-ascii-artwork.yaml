@@ -3,7 +3,7 @@ name: Generating ASCCI Artwork
 on: push
 
 jobs:
-  ascii_jobs:
+  ascii_job:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout Repo
