@@ -17,6 +17,7 @@ jobs:
       run: cowsay -f dragon "I AM DRAGON" >> dragon.txt
 
   test_job:
+    needs: build_job
     runs-on: ubuntu-latest
     steps:
     - name: Read the file
@@ -25,7 +26,8 @@ jobs:
     - name: List the files
       run: ls -ltra
 
-  deploy_job:
+  deploy_job: 
+    needs: test_job
     runs-on: ubuntu-latest
     steps:
     - name: Read the file
