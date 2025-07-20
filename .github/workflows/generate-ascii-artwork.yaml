@@ -4,7 +4,7 @@ on:
   push
 
 jobs:
-  ascii_job:
+  build_job:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout Repo
@@ -12,8 +12,24 @@ jobs:
       
     - name: List the files
       run: ls -ltra
+    
+    - name: Execting cowsay
+      run: cowsay -f dragon "I AM DRAGON" >> dragon.txt
 
-    - name: Executing Shell Script
-      run: |
-        chmod +x script.sh
-        ./script.sh
+  test_job:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Read the file
+      uses: grep -i "dragon" dragon.txt
+      
+    - name: List the files
+      run: ls -ltra
+
+  deploy_job:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Read the file
+      uses: cat dragon.txt
+      
+    - name: Deploying cowsay
+      run: echo "Deploying"
