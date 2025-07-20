@@ -10,20 +10,6 @@ jobs:
     - name: Checkout Repo
       uses: actions/checkout@v4
         
-    - name: Install Cowsay Program
-      run: sudo apt-get install cowsay -y
-        
-    - name: Execute Cowsay CMD
-      run: cowsay -f elephant "I AM ELEPHANT" >> dragon.txt
-
-    - name: Test file Exists
-      run: grep -i "elephant" dragon.txt
-
-    - name: Read file
-      run: cat dragon.txt
-
-    - name: List file
-      run: ls -ltra
-
-    - name: Only this workflow get executed
-      run: echo "Only this workflow get executed"
+    - name: Executing Shell Script
+      run: chmod +x ascii.sh
+           ./ascii.sh
