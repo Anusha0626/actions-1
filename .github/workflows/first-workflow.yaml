@@ -9,11 +9,8 @@ jobs:
         - name: Checkout Repo
           uses: actions/checkout@v4
 
-        - name: My first message
-          run: echo "Welcome to github actions"
-
-        - name: List the files 
-          run: ls
-
-        - name: Read file
-          run: cat README.md
+        - name: Multiple command (single step - executing multiple commands)
+          run: | 
+               echo "Welcome to github actions"
+               ls
+               cat README.md
