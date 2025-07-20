@@ -10,8 +10,8 @@ jobs:
     - name: Checkout Repo
       uses: actions/checkout@v4
       
-    - name: List the files
-      run: ls -ltra
+    - name: Installing dependencies
+      run: sudo apt-get install cowsay
     
     - name: Execting cowsay
       run: cowsay -f dragon "I AM DRAGON" >> dragon.txt
